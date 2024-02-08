@@ -107,4 +107,4 @@ if __name__ == "__main__":
         img = np.concatenate(img, 1)
         images.append(img)
     images = np.concatenate(images, 0)
-    Image.fromarray(images).save(f"sample.png")
+    Image.fromarray(images).save(f"{args.text}_{args.seed}.png")

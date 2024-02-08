@@ -51,7 +51,7 @@ def t2i(model, image_size, prompt, uc, sampler, step=20, scale=7.5, batch_size=8
 
 
 if __name__ == "__main__":
-    start_time = time.time()
+    # start_time = time.time()
 
     parser = argparse.ArgumentParser()
     parser.add_argument("--model_name", type=str, default="sd-v2.1-base-4view", help="load pre-trained model from hugginface")
@@ -98,6 +98,8 @@ if __name__ == "__main__":
     else:
         camera = None
     
+    start_time = time.time()
+
     t = args.text + args.suffix
     set_seed(args.seed)
     images = []

@@ -12,10 +12,8 @@ from mvdream.ldm.util import instantiate_from_config
 from mvdream.ldm.models.diffusion.ddim import DDIMSampler
 from mvdream.model_zoo import build_model
 
-import sys
-import os
 # This line adjusts the path to include the project root directory explicitly
-sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
+# sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 
 print(sys.path)
 

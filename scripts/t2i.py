@@ -108,7 +108,7 @@ if __name__ == "__main__":
         images.append(img)
     images = np.concatenate(images, 0)
     end_time = int(time.time() - start_time)
-    image_name = f"f"{args.text}_seed{args.seed}_time{end_time}.png""
+    image_name = f"{args.text}_seed{args.seed}_time{end_time}.png"
     image_path = f"output/{image_name}"
     os.makedirs(os.path.dirname(image_path), exist_ok=True)
     Image.fromarray(images).save(image_path)

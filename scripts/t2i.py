@@ -5,7 +5,8 @@ import argparse
 from PIL import Image
 import numpy as np
 from omegaconf import OmegaConf
-import torch 
+import torch
+import time
 
 # This line adjusts the path to include the project root directory explicitly
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
@@ -50,6 +51,7 @@ def t2i(model, image_size, prompt, uc, sampler, step=20, scale=7.5, batch_size=8
 
 
 if __name__ == "__main__":
+    start_time = time.time()
 
     parser = argparse.ArgumentParser()
     parser.add_argument("--model_name", type=str, default="sd-v2.1-base-4view", help="load pre-trained model from hugginface")
@@ -105,4 +107,8 @@ if __name__ == "__main__":
         img = np.concatenate(img, 1)
         images.append(img)
     images = np.concatenate(images, 0)
-    Image.fromarray(images).save(f"{args.text}_{args.seed}.png")
+    end_time = int(time.time() - start_time)
+    image_name = f"f"{args.text}_seed{args.seed}_time{end_time}.png""
+    image_path = f"output/{image_name}"
+    os.makedirs(os.path.dirname(image_path), exist_ok=True)
+    Image.fromarray(images).save(image_path)

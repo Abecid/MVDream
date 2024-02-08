@@ -6,6 +6,8 @@ import gradio as gr
 from omegaconf import OmegaConf
 import torch 
 
+import os
+import sys
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 
 from mvdream.camera_utils import get_camera
